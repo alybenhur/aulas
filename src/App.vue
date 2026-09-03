@@ -70,7 +70,7 @@
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#vetanaalumno">Crear</a></li>
-            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal2">Listar</a></li>
+            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#listadoalumno">Listar</a></li>
            
           </ul>
         </li>
@@ -135,7 +135,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        <button type="button" class="btn btn-primary" @click="guardar">Guardar</button>
+        
       </div>
     </div>
   </div>
@@ -177,6 +177,42 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
         <button type="button" class="btn btn-primary" @click="guardaralumno">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--  LISTAR Estudiante -->
+<div class="modal fade" id="listadoalumno" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">LISTAR ESTUDIANTES</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Cedula</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Edad</th>
+                <th scope="col">Correo</th>
+               </tr>
+            </thead>
+            <tr v-for="data in estudiantes ">
+              <td>{{data.cedula}}</td>
+              <td>{{ data.nombre }}</td>
+              <td>{{ data.apellido }}</td>
+              <td>{{ data.edad }}</td>
+              <td>{{ data.correo }}</td>
+            </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+       
       </div>
     </div>
   </div>
